@@ -9,12 +9,12 @@ const NotFound = () => {
     useEffect(() => {
         setTimeout(() => {
             router.push('/')
-        }, 3000)
+        }, 4000)
     }, [])
 
     return (
         <div>
-            <p>Ой..ю</p>
+            <p>Ой...</p>
             <h1>Такой страницы нет</h1>
             <p>Перейти на <Link href="/">главную страницу</Link></p>
         </div>
