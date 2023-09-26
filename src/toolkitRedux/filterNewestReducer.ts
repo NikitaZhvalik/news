@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 interface FilterNewestState {
-    filterNewest: string;
+    filterNewest: string
 }
 
 const initialState :FilterNewestState = {

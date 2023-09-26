@@ -1,11 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 interface FilterItemsOnPagesState {
-    filterItemsOnPage: string;
+    filterItemsOnPage: string
 }
 
 const initialState :FilterItemsOnPagesState = {
-    filterItemsOnPage: '2'
+    filterItemsOnPage: '10'
 }
 
 export const filterItemsOnPageSlice = createSlice({

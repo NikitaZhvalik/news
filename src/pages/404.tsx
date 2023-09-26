@@ -2,10 +2,10 @@ import Link from "next/link";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 
+import styles from "@/styles/404.module.css";
+
 const NotFound = () => {
-
     const router = useRouter()
-
     useEffect(() => {
         setTimeout(() => {
             router.push('/')
@@ -13,12 +13,13 @@ const NotFound = () => {
     }, [])
 
     return (
-        <div>
-            <p>Ой...</p>
-            <h1>Такой страницы нет</h1>
-            <p>Перейти на <Link href="/">главную страницу</Link></p>
+        <div className={styles.container}>
+            <h1 className={styles.title}>Ой... такой страницы нет!</h1>
+            <Link href="/">
+                <button className={styles.btn}>Перейти на главную страницу</button>
+            </Link>
         </div>
-    );
+    )
 }
  
 export default NotFound;

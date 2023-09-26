@@ -1,0 +1,23 @@
+.select {
+    min-width: 120px;
+    min-height: 30px;
+    margin-right: 10px;
+    padding: 5px 15px;
+
+    background-color: #ffcc33;
+
+    border-radius: 6px;
+    border: solid #000 2px;
+
+    cursor: pointer;
+
+    transition: all ease-in .25s;
+}
+
+.select:hover {
+    box-shadow: 0 0 10px 0 #fdbe00; 
+}
+
+.select:focus {
+    outline: none;
+}

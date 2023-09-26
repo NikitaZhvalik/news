@@ -1,5 +1,5 @@
 import Image from "next/image";
-import styles from "../styles/Header.module.css"
+import styles from "../styles/Header.module.css";
 
 const Header = () => {
     return (
@@ -8,7 +8,7 @@ const Header = () => {
                 <Image src="/logo.png" alt="logo" width={60} height={60}/>
             </div>
         </header>
-    );
+    )
 }
  
 export default Header;

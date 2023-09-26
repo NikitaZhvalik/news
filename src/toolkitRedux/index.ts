@@ -6,12 +6,12 @@ import filterItemsOnPages from "./filterItemsOnPagesReducer";
 import filterNewest from "./filterNewestReducer";
 
 const routeReducer = combineReducers({
-  news: newsReducer,
-  query: queryReducer,
-  itemsOnPages: filterItemsOnPages,
-  newest: filterNewest,
-});
+	news: newsReducer,
+	query: queryReducer,
+	itemsOnPages: filterItemsOnPages,
+	newest: filterNewest,
+})
 
 export const store = configureStore({
-  reducer: routeReducer,
-});
+	reducer: routeReducer,
+})
