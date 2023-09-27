@@ -1,0 +1,33 @@
+.container {
+    min-height: 80vh;
+
+    display: flex; 
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+}
+
+.title {
+    margin-bottom: 20px;
+    
+    color: #ffcc33;
+}
+
+.btn {
+    min-width: 120px;
+    min-height: 40px;
+    padding: 10px;
+
+    background-color: #ffcc33;
+
+    border-radius: 6px;
+    border: solid #000 2px;
+    transition: all ease-in .25s;
+
+    cursor: pointer;
+}
+
+.btn:hover {
+    transform: scale(1.01);
+    box-shadow: 0 0 10px 0 #fdbe00; 
+}
