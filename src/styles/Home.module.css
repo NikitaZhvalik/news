@@ -1,5 +1,5 @@
 .title {
-    color: #ffcc33;
+    color: #000000;
 }
 
 .form {
@@ -24,6 +24,10 @@
     transform: scale(1.01);
     box-shadow: 0 0 10px 0 #fdbe00; 
     outline: none;
+}
+
+.input:hover {
+    box-shadow: 0 0 10px 0 #fdbe00; 
 }
 
 .btn {

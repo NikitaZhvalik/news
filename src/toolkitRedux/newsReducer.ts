@@ -9,7 +9,7 @@ interface NewsItem {
 }
 
 interface NewsState {
-	news: NewsItem[]
+	news: NewsItem[],
 }
 
 interface FetchNewsParams {
@@ -55,7 +55,7 @@ const newsSlice = createSlice({
 			console.log("pending")
 		})
 		.addCase(getNews.rejected, (state) => {
-			console.log("rejected")
+        	console.log("rejected")
 		})
 	},
 })

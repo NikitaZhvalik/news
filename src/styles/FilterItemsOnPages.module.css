@@ -8,6 +8,10 @@
     color: #ffcc33;
 }
 
+.text {
+    color: #000000;
+}
+
 .select {
     min-width: 60px;
     min-height: 30px;

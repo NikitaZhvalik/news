@@ -1,0 +1,123 @@
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+}
+
+.heading {
+    margin-bottom: 20px;
+
+    color: #000000;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.subtitleBox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 6px;
+}
+
+.date{
+    color: #000000;
+}
+
+.guardianLink {
+    color: #FFF;
+    font-size: 22px;
+}
+
+.guardianLink::after {
+    content: '';
+    margin-left: 6px;
+    display: inline-block;
+    vertical-align: middle;
+    width: 30px;
+    height: 30px;
+    background-image: url(../../public/arrow.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: initial;
+}
+
+.paragraph {
+    margin-top: 10px;
+    margin-bottom: 20px;
+
+    font-size: 16px;
+    line-height: 1.5;
+    color: #000000;
+}
+
+.paragraph p {
+    margin-bottom: 10px;
+}
+
+.paragraph p a {
+    color: #FFF;
+}
+
+.paragraph figure img {
+    width: 720px;
+    height: 400px;
+    margin: 10px auto 10px;
+    display: block;
+
+    border-radius: 6px;
+}
+
+.paragraph aside{
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    font-size: 16px;
+    line-height: 1.5;
+    color: #FFF;
+}
+
+.paragraph aside p a::after{
+    content: '';
+    margin-left: 6px;
+    display: inline-block;
+    vertical-align: top;
+    width: 25px;
+    height: 25px;
+    background-image: url(../../public/miniArrow.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: initial;
+}
+  
+
+.btn {
+    min-width: 120px;
+    min-height: 40px;
+    padding: 10px;
+
+    background-color: #ffcc33;
+
+    border-radius: 6px;
+    border: solid #000 2px;
+    transition: all ease-in .25s;
+
+    cursor: pointer;
+}
+
+.btn:hover {
+    transform: scale(1.01);
+    box-shadow: 0 0 10px 0 #fdbe00; 
+}
+
+@media (max-width: 760px) {
+    .paragraph figure img {
+        width: 400px;
+        height: 300px;
+    }
+}
+
+@media (max-width: 440px) {
+    .paragraph figure img {
+        width: 280px;
+        height: 200px;
+    }
+}

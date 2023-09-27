@@ -20,12 +20,14 @@ const FilterItemsOnPages: React.FC = () => {
 
 	return (
 		<div className={styles.content}>
-			<label htmlFor="itemsOnPage" className={styles.label}>
+			<p className={styles.text}>
 				Items on Page
-			</label>
+			</p>
 			<select id="itemsOnPage" onChange={handleChange} value={value} className={styles.select} name="categories">
 				<option value="10">10</option>
 				<option value="15">15</option>
+				<option value="25">25</option>
+				<option value="40">40</option>
 			</select>
 		</div>
 	)

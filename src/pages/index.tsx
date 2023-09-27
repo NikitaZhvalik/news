@@ -18,8 +18,8 @@ interface NewsItem {
 }
 
 export default function Home() {
-	const key = "61667a39-a309-4fcf-bd7a-8f503bf6d796";
-	const dispatch = useDispatch();
+	const key :string = "61667a39-a309-4fcf-bd7a-8f503bf6d796"
+	const dispatch = useDispatch()
 	const query = useSelector(
 		(state: { query: { query: string } }) => state.query.query
 	)
@@ -54,7 +54,6 @@ export default function Home() {
 		}
 	}, [fetching])
 
-
 	useEffect(() => {
 		document.addEventListener('scroll', scrollHandler)
 
@@ -65,7 +64,7 @@ export default function Home() {
 
 
 	const scrollHandler = (e: any) => { // todo переделать на TS
-		if (e.target.documentElement.scrollHeight - (e.target.documentElement.scrollTop + window.innerHeight) < 200) {
+		if (e.target.documentElement.scrollHeight - (e.target.documentElement.scrollTop + window.innerHeight) < 300) {
 			setFetching(true)
 		}
 	}
@@ -94,5 +93,5 @@ export default function Home() {
 			</div>
 			< News />
 		</div>
-	);
+	)
 }

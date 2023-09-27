@@ -22,19 +22,20 @@ const News = () => {
 			<ul className={styles.articles}>
 				{news?.length === 0 ? <h2 className={styles.cantFind}>I couldn't find news for this request</h2> : ''}
 				{news?.map((newsItem: NewsItem, index :number) => {
-					const date = newsItem.webPublicationDate;
-					const formattedDate = format(new Date(date), "dd MMM yyyy, hh:mm:ss a" );
+					const date = newsItem.webPublicationDate
+					const formattedDate = format(new Date(date), "dd MMM yyyy, hh:mm:ss a")
+					const uri = encodeURIComponent(newsItem.id)
 
 					return (
-					<Link href={`/news/${index}`} key={newsItem.id}>
-						<li className={styles.article}>
-						<p className={styles.date}>{formattedDate}</p>
-						<h3 className={styles.headline}>{newsItem.webTitle}</h3>
-						<p className={styles.categories}>{newsItem.pillarName}</p>
-						<button className={styles.details}>details</button>
-						</li>
-					</Link>
-					);
+						<Link href={`/news/${uri}`} key={index}>
+							<li className={styles.article}>
+							<p className={styles.date}>{formattedDate}</p>
+							<h3 className={styles.headline}>{newsItem.webTitle}</h3>
+							<p className={styles.categories}>{newsItem.pillarName}</p>
+							<button className={styles.details}>details</button>
+							</li>
+						</Link>
+					)
 				})}
 			</ul>
 		</main>
