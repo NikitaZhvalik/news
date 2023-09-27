@@ -15,3 +15,5 @@ const routeReducer = combineReducers({
 export const store = configureStore({
 	reducer: routeReducer,
 })
+
+export type AppDispatch = typeof store.dispatch

@@ -19,7 +19,7 @@ type NewsDetailsProps = {
 
 const key: string = "61667a39-a309-4fcf-bd7a-8f503bf6d796";
 
-export const getServerSideProps = (async (context: any) => { //todo
+export const getServerSideProps = (async (context: { params: { id: string } }) => {
 
 	const {id} = context.params
 	const res = await fetch(`https://content.guardianapis.com/${decodeURIComponent(id)}?api-key=${key}&show-fields=all&show-elements=all`)
@@ -28,9 +28,9 @@ export const getServerSideProps = (async (context: any) => { //todo
 	return { props: {data} }
 })
 
-const NewsDetails: React.FC<NewsDetailsProps> = ({data} :any) => { //todo
+const NewsDetails: React.FC<NewsDetailsProps> = ({data} :NewsDetailsProps) => {
     const date = data?.webPublicationDate
-    const formattedDate = new Date(date).toLocaleString("en-US", {
+    const formattedDate = new Date(date!).toLocaleString("en-US", {
         day: "numeric",
         month: "short",
         year: "numeric",
@@ -52,10 +52,10 @@ const NewsDetails: React.FC<NewsDetailsProps> = ({data} :any) => { //todo
 						</Link>
 					)}
 				</div>
-				{data?.fields.standfirst && <div className={styles.paragraph} dangerouslySetInnerHTML={{ __html: data.fields.standfirst }} />}
-				{data?.fields.byline && <div className={styles.paragraph} dangerouslySetInnerHTML={{ __html: data.fields.byline }} />}
-				{data?.fields.main && <div className={styles.paragraph} dangerouslySetInnerHTML={{ __html: data.fields.main }} />}
-				{data?.fields.body && <div className={styles.paragraph} dangerouslySetInnerHTML={{ __html: data.fields.body }} />}
+				{data?.fields?.standfirst && <div className={styles.paragraph} dangerouslySetInnerHTML={{ __html: data.fields.standfirst }} />}
+				{data?.fields?.byline && <div className={styles.paragraph} dangerouslySetInnerHTML={{ __html: data.fields.byline }} />}
+				{data?.fields?.main && <div className={styles.paragraph} dangerouslySetInnerHTML={{ __html: data.fields.main }} />}
+				{data?.fields?.body && <div className={styles.paragraph} dangerouslySetInnerHTML={{ __html: data.fields.body }} />}
 				<Link href="/">
 					<button className={styles.btn}>Go back to the main page</button>
 				</Link>

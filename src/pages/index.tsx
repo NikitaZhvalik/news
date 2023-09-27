@@ -4,6 +4,7 @@ import { getNews } from "@/toolkitRedux/newsReducer";
 import { setQuery } from "@/toolkitRedux/queryReducer";
 import { AnyAction } from "redux";
 import { setNews } from "@/toolkitRedux/newsReducer";
+import { AppDispatch } from "@/toolkitRedux";
 import axios from "axios";
 import News from "@/components/news";
 import FilterNewest from "@/common/filterNewest";
@@ -19,7 +20,7 @@ interface NewsItem {
 
 export default function Home() {
 	const key :string = "61667a39-a309-4fcf-bd7a-8f503bf6d796"
-	const dispatch = useDispatch()
+	const dispatch = useDispatch<AppDispatch>()
 	const query = useSelector(
 		(state: { query: { query: string } }) => state.query.query
 	)
@@ -36,7 +37,7 @@ export default function Home() {
 
 	function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
 		e.preventDefault()
-		dispatch<AnyAction>(getNews({ query, itemOnPage, newest }))
+		dispatch(getNews({ query, itemOnPage, newest }))
 	}
 
 	//! scroll
@@ -63,8 +64,8 @@ export default function Home() {
 	}, [])
 
 
-	const scrollHandler = (e: any) => { // todo переделать на TS
-		if (e.target.documentElement.scrollHeight - (e.target.documentElement.scrollTop + window.innerHeight) < 300) {
+	const scrollHandler = () => {
+		if (document.documentElement.scrollHeight - (document.documentElement.scrollTop + window.innerHeight) < 300) {
 			setFetching(true)
 		}
 	}
